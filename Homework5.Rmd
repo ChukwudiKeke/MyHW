@@ -22,3 +22,8 @@ homicides<-read_csv("homicide-data.csv")
 ```{r}
 homicides<-unite(homicides, col='city_name', c('city', 'state'), sep=',') 
 ```
+
+```{r}
+baltimore<-homicides %>%
+   filter(city_name == "Baltimore,MD") 
+```
