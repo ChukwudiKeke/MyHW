@@ -24,3 +24,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width 
 ```{r}
 homicides<-read_csv("homicide-data.csv")
 ```
+```{r}
+homicides<-unite(homicides, col='city_name', c('city', 'state'), sep=',') 
+homicides<-unite(homicides, col = 'first_last' , c('victim_first', 'victim_last'), sep = ' ')
+```
