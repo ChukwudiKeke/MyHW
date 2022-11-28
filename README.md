@@ -44,3 +44,13 @@ baltimore<-baltimore %>%
                             month <5 ~'winter',
                            month >10 ~ 'winter'))
 ```
+
+```{r}
+ggplot(baltimore, aes(x = date, weight = homicides, fill = season)) + geom_histogram (bins = 200, binwidth = 20) + 
+  scale_fill_manual(values = c('winter' = 'cadetblue3', 
+                            'summer' = 'azure3')) + 
+  ggtitle("Homicides in Baltimore, MD") + ylab("monthly homicides") + xlab("Date") + theme_dark() + geom_vline(xintercept = as.numeric(as.Date("2015-04-01")), col="red",linetype = "longdash") +
+  annotate("text", x = as.Date("2015-04-01"), y = 45, label="Arrest of \n Freddie Gray", color="azure3", size = 3, hjust = 1) 
+  
+```
+```
