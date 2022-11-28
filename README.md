@@ -21,3 +21,6 @@ library(lubridate)
 library(scales)
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width = 12, fig.height = 4, tidy = TRUE)
 ```
+```{r}
+homicides<-read_csv("homicide-data.csv")
+```
