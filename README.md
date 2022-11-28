@@ -34,4 +34,8 @@ baltimore<-homicides %>%
 mutate(reported_date = ymd(reported_date)) %>%
 group_by(date = floor_date(reported_date, 'month')) %>%
 summarize(homicides = n())
+
+baltimore$month <- format(as.Date(baltimore$date, format="%Y/%m/%d"),"%m")
+
+baltimore$month<-as.numeric(baltimore$month)
 ```
