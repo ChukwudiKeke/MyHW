@@ -25,5 +25,6 @@ homicides<-unite(homicides, col='city_name', c('city', 'state'), sep=',')
 
 ```{r}
 baltimore<-homicides %>%
-   filter(city_name == "Baltimore,MD") 
+   filter(city_name == "Baltimore,MD") %>%
+  mutate(reported_date = ymd(reported_date))
 ```
