@@ -28,3 +28,10 @@ homicides<-read_csv("homicide-data.csv")
 homicides<-unite(homicides, col='city_name', c('city', 'state'), sep=',') 
 homicides<-unite(homicides, col = 'first_last' , c('victim_first', 'victim_last'), sep = ' ')
 ```
+```{r}
+baltimore<-homicides %>%
+   filter(city_name=="Baltimore,MD") %>%
+mutate(reported_date = ymd(reported_date)) %>%
+group_by(date = floor_date(reported_date, 'month')) %>%
+summarize(homicides = n())
+```
