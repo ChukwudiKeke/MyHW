@@ -38,4 +38,9 @@ summarize(homicides = n())
 baltimore$month <- format(as.Date(baltimore$date, format="%Y/%m/%d"),"%m")
 
 baltimore$month<-as.numeric(baltimore$month)
+
+baltimore<-baltimore %>%
+  mutate(season = case_when(month >= 5 & month <=10 ~ 'summer',
+                            month <5 ~'winter',
+                           month >10 ~ 'winter'))
 ```
