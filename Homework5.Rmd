@@ -39,3 +39,10 @@ baltimore<-baltimore %>%
                             month <5 ~'winter',
                            month >10 ~ 'winter'))
 ```
+
+```{r}
+ggplot() + 
+  geom_bar(data = baltimore, aes(x = date, weight = homicides, 
+          fill = season), bins = 200, binwidth = 20) 
+
+```

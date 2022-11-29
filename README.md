@@ -11,3 +11,4 @@ Group by month of the year
 summarize number of homicides 
 create a month column from the date 
 Categorize months by winter and summer season 
+Create a bar plot of number of homicides by date grouped by season 
