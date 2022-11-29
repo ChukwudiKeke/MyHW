@@ -9,3 +9,4 @@ Filter city name by Baltimore,MD
 Lubridate reported_date to a date class
 Group by month of the year
 summarize number of homicides 
+create a month column from the date 
