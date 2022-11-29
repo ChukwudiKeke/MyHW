@@ -29,5 +29,13 @@ baltimore<-homicides %>%
   mutate(reported_date = ymd(reported_date)) %>%
 group_by(date = floor_date(reported_date, 'month')) %>%
 summarize(homicides = n())
-baltimore$month <- format(as.Date(baltimore$date, format="%Y/%m/%d"),"%m")
+baltimore$month <- format(as.Date(baltimore$date, format="%Y/%m/%d"),"%m")%>%
+as.numeric()
+```
+
+```{r}
+baltimore<-baltimore %>%
+  mutate(season = case_when(month >= 5 & month <=10 ~'summer',
+                            month <5 ~'winter',
+                           month >10 ~ 'winter'))
 ```
