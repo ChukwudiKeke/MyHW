@@ -27,5 +27,6 @@ homicides<-unite(homicides, col='city_name', c('city', 'state'), sep=',')
 baltimore<-homicides %>%
    filter(city_name == "Baltimore,MD") %>%
   mutate(reported_date = ymd(reported_date)) %>%
-group_by(date = floor_date(reported_date, 'month')) 
+group_by(date = floor_date(reported_date, 'month')) %>%
+summarize(homicides = n())
 ```
