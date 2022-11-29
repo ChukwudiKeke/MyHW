@@ -46,6 +46,6 @@ ggplot() +
           fill = season), bins = 200, binwidth = 20) + geom_smooth(data = baltimore, aes(x = date, y = homicides), color = "blue", span = 0.15, se = FALSE, size = 2) + theme(legend.position = "bottom") +
   scale_fill_manual(values = c('winter' = 'cadetblue3', 
                                'summer' = 'azure3')) + theme_dark() + geom_vline(xintercept = as.numeric(as.Date("2015-04-01")), col="red",linetype = "longdash") +
-  annotate("text", x = as.Date("2015-04-01"), y = 45, label="Arrest of \n Freddie Gray", color="azure3", size = 3, hjust = 1)
+  annotate("text", x = as.Date("2015-04-01"), y = 45, label="Arrest of \n Freddie Gray", color="azure3", size = 3, hjust = 1) + ggtitle("Homicides in Baltimore, MD") + ylab("monthly homicides")
 
 ```
