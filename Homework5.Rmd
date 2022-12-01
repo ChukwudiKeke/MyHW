@@ -18,9 +18,15 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width 
 homicides<-read_csv("homicide-data.csv")%>%
   unite(col='city_name', c('city', 'state'), sep=',') 
 ```
+
 ```{r} 
 baltimore<-homicides %>%
   filter(city_name == "Baltimore,MD") %>%
   mutate(reported_date = ymd(reported_date)) %>%
   group_by(date = floor_date(reported_date, 'month')) %>%
   summarize(homicides = n())
+```
+
+```{r}
+baltimore$month <- format(as.Date(baltimore$date, format="%Y/%m/%d"),"%m")
+```
