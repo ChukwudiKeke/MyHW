@@ -4,3 +4,4 @@ This is the readme for the codes of ERHS535 Homework 5
 Please load required libraries 
 Read in Homicide data
 unite "city" and "state" into a single column "city_name"
+filter homicides in Baltimore,MD
