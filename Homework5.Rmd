@@ -41,4 +41,8 @@ baltimore<-baltimore %>%
 
 ```{r}
 ggplot() + 
-  geom_bar(data = baltimore, aes(x = date, weight = homicides, fill = season), bins = 200, binwidth = 20)
+  geom_bar(data = baltimore, aes(x = date, weight = homicides, fill = season), bins = 200, binwidth = 20) + 
+  geom_smooth(data = baltimore, aes(x = date, y = homicides), 
+              color = "blue", span = 0.15, se = FALSE, size = 2) + 
+             scale_fill_manual(values = c('winter' = 'cadetblue3', 
+                            'summer' = 'azure3')) + 
