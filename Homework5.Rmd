@@ -20,4 +20,5 @@ homicides<-read_csv("homicide-data.csv")%>%
 ```
 ```{r} 
 baltimore<-homicides %>%
-  filter(city_name == "Baltimore,MD")
+  filter(city_name == "Baltimore,MD") %>%
+  mutate(reported_date = ymd(reported_date)) 
