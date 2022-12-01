@@ -14,37 +14,3 @@ library(scales)
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width = 12, fig.height = 4, tidy = TRUE)
 ```
 
-```{r}
-homicides<-read_csv("homicide-data.csv")
-```
-
-```{r}
-homicides<-unite(homicides, col='city_name', c('city', 'state'), sep=',') 
-```
-
-```{r}
-baltimore<-homicides %>%
-   filter(city_name == "Baltimore,MD") %>%
-  mutate(reported_date = ymd(reported_date)) %>%
-group_by(date = floor_date(reported_date, 'month')) %>%
-summarize(homicides = n())
-baltimore$month <- format(as.Date(baltimore$date, format="%Y/%m/%d"),"%m")%>%
-as.numeric()
-```
-
-```{r}
-baltimore<-baltimore %>%
-  mutate(season = case_when(month >= 5 & month <=10 ~'summer',
-                            month <5 ~'winter',
-                           month >10 ~ 'winter'))
-```
-
-```{r}
-ggplot() + 
-  geom_bar(data = baltimore, aes(x = date, weight = homicides, 
-          fill = season), bins = 200, binwidth = 20) + geom_smooth(data = baltimore, aes(x = date, y = homicides), color = "blue", span = 0.15, se = FALSE, size = 2) + theme(legend.position = "bottom") +
-  scale_fill_manual(values = c('winter' = 'cadetblue3', 
-                               'summer' = 'azure3')) + theme_dark() + geom_vline(xintercept = as.numeric(as.Date("2015-04-01")), col="red",linetype = "longdash") +
-  annotate("text", x = as.Date("2015-04-01"), y = 45, label="Arrest of \n Freddie Gray", color="azure3", size = 3, hjust = 1) + ggtitle("Homicides in Baltimore, MD") + ylab("monthly homicides")
-
-```
