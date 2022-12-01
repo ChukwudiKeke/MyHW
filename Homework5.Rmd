@@ -28,5 +28,6 @@ baltimore<-homicides %>%
 ```
 
 ```{r}
-baltimore$month <- format(as.Date(baltimore$date, format="%Y/%m/%d"),"%m")
+baltimore$month <- format(as.Date(baltimore$date, format="%Y/%m/%d"),"%m")%>%
+as.numeric()
 ```

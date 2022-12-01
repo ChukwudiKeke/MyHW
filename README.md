@@ -9,3 +9,4 @@ Mutate reported date to a date class
 group by the month of the year
 summarize total homicides by month of the year 
 create a column for the month of the year 
+change the month of the year to a numeric variable 
