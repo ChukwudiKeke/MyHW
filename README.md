@@ -7,3 +7,4 @@ unite "city" and "state" into a single column "city_name"
 filter homicides in Baltimore,MD
 Mutate reported date to a date class 
 group by the month of the year
+summarize total homicides by month of the year 
