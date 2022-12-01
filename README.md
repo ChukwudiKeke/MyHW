@@ -14,4 +14,4 @@ Categorize months by winter and summer season
 Create a bar plot of number of homicides by date grouped by season 
 Add smoothed curve to show seasonal and long term trends 
 Add vertical line to highlight the date Freddie Gray was arrested
-Label plot for easy interpretation 
+Label plot for easy interpretation. 
