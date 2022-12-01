@@ -13,3 +13,4 @@ change the month of the year to a numeric variable
 categorize the month of the year by winter and summer season 
 create a bar plot of monthly homicides by year
 add a smoothed curve to show seasonality and long term trend 
+label plot well for easy interpretation by viewers 

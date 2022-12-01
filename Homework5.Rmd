@@ -45,4 +45,4 @@ ggplot() +
   geom_smooth(data = baltimore, aes(x = date, y = homicides), 
               color = "blue", span = 0.15, se = FALSE, size = 2) + 
              scale_fill_manual(values = c('winter' = 'cadetblue3', 
-                            'summer' = 'azure3')) + 
+                            'summer' = 'azure3')) +   ggtitle("Homicides in Baltimore, MD") + ylab("monthly homicides") + xlab("Date") + theme_dark() 
