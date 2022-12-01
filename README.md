@@ -15,3 +15,4 @@ create a bar plot of monthly homicides by year
 add a smoothed curve to show seasonality and long term trend 
 label plot well for easy interpretation by viewers 
 Add reference line to highlight the arrest of Freddie Gray 
+Move the legend to the bottom of plot 
